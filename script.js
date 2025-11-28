@@ -21,16 +21,18 @@ for(let i = 0; i < rows; i++){
             })
 
             gridItem.addEventListener("mousedown", ()=>{
-                if(isMouseDown){
-                    gridItem.style.backgroundColor = 'black';
-                }    
+                gridItem.style.backgroundColor = 'black';  
             })
 
-        }); 
+            gridItem.addEventListener("click", ()=>{
+                gridItem.style.backgroundColor = 'black';  
+            })
+
+            }); 
 
         gridContainer.addEventListener("mouseup", ()=>{
             isMouseDown = false;
-        })
+        });
     }
 }
 
@@ -63,9 +65,11 @@ function generateNewGrid(){
                 })
 
                 gridItem.addEventListener("mousedown", ()=>{
-                    if(isMouseDown){
-                        gridItem.style.backgroundColor = 'black';
-                    }    
+                        gridItem.style.backgroundColor = 'black';  
+                })
+
+                gridItem.addEventListener("click", ()=>{
+                        gridItem.style.backgroundColor = 'black';  
                 })
 
             }); 
