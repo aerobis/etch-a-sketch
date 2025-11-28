@@ -1,11 +1,11 @@
 let rows = 16;
 let columns = 16;
+let root = document.documentElement;
 
-let gridButton = document.querySelector("#grid-button");
+let gridContainer = document.querySelector("#grid-container");
 
 for(let i = 0; i < rows; i++){
     for (let j = 0; j < columns; j++){
-        let gridContainer = document.querySelector("#grid-container");
         let gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
@@ -16,13 +16,28 @@ for(let i = 0; i < rows; i++){
     }
 }
 
+let gridButton = document.querySelector("#grid-button");
+
 function generateNewGrid(){
     let userInput = parseInt(prompt("Enter new number of grids(2-100): "));
 
+    root.style.setProperty('--boxes-per-row', userInput);
+
     gridContainer.innerHTML = '';
-    
-    root.style.setPropert('--boxes-per-row', userInput);
+
+    for(let i = 0; i < userInput; i++){
+        for(let j = 0; j < userInput; j++){
+            let gridItem = document.createElement("div");
+            gridItem.classList.add("grid-item");
+
+            gridItem.addEventListener("mouseover", ()=>{
+                gridItem.style.backgroundColor = "black";
+            })
+
+            gridContainer.appendChild(gridItem);
+        }
+    }
 }
 
-gridButton.addEventListener('click', generateNewGrid());
+gridButton.addEventListener("click", generateNewGrid);
 

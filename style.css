@@ -15,13 +15,14 @@
     background-color: blue;
     text-align:center;
     border: 1px solid #ccc;
-    display: flex;
-    width: calc(1280px / var(--boxes-per-row));
-    height: calc(1280px / var(--boxes-per-row));
+    /* display: flex; */
+
+    width: round(calc(1280px / var(--boxes-per-row)), 1px);
+    height: round(calc(1280px / var(--boxes-per-row)), 1px);
+
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .button-div{
