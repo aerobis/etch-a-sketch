@@ -9,11 +9,13 @@ for(let i = 0; i < rows; i++){
     for (let j = 0; j < columns; j++){
         let gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
+        gridItem.s
+
         gridContainer.appendChild(gridItem);
 
         gridContainer.addEventListener("mousedown", ()=>{
             isMouseDown = true;
-
+            
             gridItem.addEventListener("mouseover", ()=>{
                 if(isMouseDown){
                     gridItem.style.backgroundColor = 'black';
@@ -30,7 +32,7 @@ for(let i = 0; i < rows; i++){
 
             }); 
 
-        gridContainer.addEventListener("mouseup", ()=>{
+        document.addEventListener("mouseup", ()=>{
             isMouseDown = false;
         });
     }
@@ -74,9 +76,9 @@ function generateNewGrid(){
 
             }); 
 
-            gridContainer.addEventListener("mouseup", ()=>{
+            document.addEventListener("mouseup", ()=>{
                 isMouseDown = false;
-            })
+            });
 
             gridContainer.appendChild(gridItem);
         }
